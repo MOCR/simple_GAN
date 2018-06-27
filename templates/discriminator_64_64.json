@@ -1,0 +1,13 @@
+{
+  "structure" : [
+    {"type" : "conv_leaky", "out_size" : 32,"kernel_size" : 3, "reduce_factor" : 2},
+    {"type" : "conv_leaky", "out_size" : 64,"kernel_size" : 3, "reduce_factor" : 2},
+    {"type" : "conv_leaky", "out_size" : 128,"kernel_size" : 3, "reduce_factor" : 2},
+    {"type" : "conv_leaky", "out_size" : 128,"kernel_size" : 3, "reduce_factor" : 2},
+    {"type" : "conv_leaky", "out_size" : 256,"kernel_size" : 3, "reduce_factor" : 2},
+    {"type" : "conv", "out_size" : 1,"kernel_size" : 3, "reduce_factor" : 2}
+  ],
+  "argument_translation" : {
+
+  }
+}
