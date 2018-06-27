@@ -1,6 +1,7 @@
 {
   "structure" : [
-    {"type" : "conv_leaky", "out_size" : 32,"kernel_size" : 3, "reduce_factor" : 2},
+    {"type" : "conv", "out_size" : 32,"kernel_size" : 3, "reduce_factor" : 2},
+    {"type" : "tf.nn.leaky_relu"},
     {"type" : "conv_leaky", "out_size" : 64,"kernel_size" : 3, "reduce_factor" : 2},
     {"type" : "conv_leaky", "out_size" : 128,"kernel_size" : 3, "reduce_factor" : 2},
     {"type" : "conv_leaky", "out_size" : 128,"kernel_size" : 3, "reduce_factor" : 2},
