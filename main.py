@@ -16,12 +16,12 @@ with sess.as_default():
     options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
     run_metadata = tf.RunMetadata()
 
-    wk, cl = nbp.create_workflow(None, [["load_dataset", {"batchsize" : 128, "dataset" : "celebA" , "resize_dim" : [64,64], "central_crop" : True}],
+    wk, cl = nbp.create_workflow(None, [["load_dataset", {"batchsize" : 128, "dataset" : "celebA" , "resize_dim" : [128,128], "central_crop" : True}],
                                         ["input_layer", {"new_input": [128,1,1,128]}],
                                         ["tf.random_normal"],
-                                        ["network", ["generator", "generator_64_64"]],
+                                        ["network", ["generator", "generator_128_128"]],
                                         ["bridge_layer", {"bridge_name" : "generated_images"}],
-                                        ["network", ["discriminator", "discriminator_64_64"]],
+                                        ["network", ["discriminator", "discriminator_128_128"]],
                                         ["bridge_layer", {"bridge_name": "discr_fake"}],
                                         ["set_adam_optimizer", {"learning_rate" : 0.0002, "beta" : 0.5}],
                                         ["softmax_loss", {"labels": 0.0}],
