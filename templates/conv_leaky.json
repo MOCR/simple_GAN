@@ -1,0 +1,12 @@
+{
+  "structure" : [
+    {"type" : "conv"},
+    {"type" : "batch_norm_layer"},
+    {"type" : "tf.nn.leaky_relu"}
+  ],
+  "argument_translation" : {
+    "out_size" : "conv_0/out_size",
+    "kernel_size" : "conv_0/kernel_size",
+    "reduce_factor" : "conv_0/reduce_factor"
+  }
+}
