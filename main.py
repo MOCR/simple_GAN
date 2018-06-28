@@ -47,7 +47,7 @@ with sess.as_default():
                                         ["clear_field", {"field_name": "gradients"}],
                                         ["initializer"]], "basic_gan_training")
     #plt.ion()
-    for i in range(100000):
+    for i in range(1000000):
         if i%250==0:
             sess.run(cl["trainers"][i%len(cl["trainers"])], options=options, run_metadata=run_metadata)
             fetched_timeline = timeline.Timeline(run_metadata.step_stats)
@@ -59,8 +59,8 @@ with sess.as_default():
         if i%1000==0:
             print(i)
             img, res = sess.run([cl["dataset"]["image"], cl["bridges"]["generated_images"]])
-            scipy.misc.imsave('generated.jpg', res[0])
-            #scipy.misc.toimage(res, cmin=0.0, cmax=1.0).save('generated.jpg')
+            #scipy.misc.imsave('generated.jpg', res[0])
+            scipy.misc.toimage(res[0], cmin=0.0, cmax=1.0).save('generated.jpg')
             os.system('tiv -w 128 generated.jpg')
             #plt.cla()
             #plt.imshow(np.vstack((img[0], res[0])))
