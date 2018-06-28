@@ -19,6 +19,7 @@ with sess.as_default():
     wk, cl = nbp.create_workflow(None, [["load_dataset", {"batchsize" : 128, "dataset" : "celebA" , "resize_dim" : [128,128], "central_crop" : True}],
                                         ["input_layer", {"new_input": [128,1,1,128]}],
                                         ["tf.random_normal"],
+                                        ["tf.nn.l2_normalize", {"axis" : -1}],
                                         ["network", ["generator", "generator_128_128"]],
                                         ["bridge_layer", {"bridge_name" : "generated_images"}],
                                         ["network", ["discriminator", "discriminator_128_128"]],
