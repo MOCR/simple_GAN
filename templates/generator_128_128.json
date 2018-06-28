@@ -7,7 +7,7 @@
     {"type" : "deconv_relu", "out_size" : 32,"kernel_size" : 3, "expand_Size" : 2},
     {"type" : "deconv_relu", "out_size" : 16,"kernel_size" : 3, "expand_Size" : 2},
     {"type" : "transpose_conv", "out_size" : 3,"kernel_size" : 3, "expand_Size" : 2},
-    {"type" : "tf.nn.tanh"}
+    {"type" : "tf.nn.sigmoid"}
   ],
   "argument_translation" : {
 
