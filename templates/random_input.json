@@ -1,0 +1,11 @@
+{
+  "structure" : [
+    {"type" : "input_layer"},
+    {"type" : "to_front_of_list", "inp_list" : [1,1,128]},
+    {"type" : "tf.random_normal"},
+    {"type" : "tf.nn.l2_normalize", "axis" : 1}
+  ],
+  "argument_translation" : {
+    "batchsize" : "input_layer_0/new_input"
+  }
+}
